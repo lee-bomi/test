@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <title>Title</title>
+</head>
+<body>                  <!-- -->
+    <div class="container" style="max-width: 600px" >
+        <div class="row">   <!--(가로) .row는 container 안에 -->
+            <div class="col">   <!-- 내용은 col클래스 내부에 위치 / col은 row의 직속자녀-->
+                <button class="btn btn-primary float-end" type="button">
+                상품등록
+                </button>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>상품명</th>
+                        <th>가격</th>
+                        <th>개수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>회원id</td>
+                        <td>상품명</td>
+                        <td>가격</td>
+                        <td>개수</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
