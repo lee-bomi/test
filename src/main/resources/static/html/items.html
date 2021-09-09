@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>Title</title>
 </head>
 <body>                  <!-- -->
@@ -13,7 +13,7 @@
         <div class="row">   <!--(가로) .row는 container 안에 -->
             <div class="col">   <!-- 내용은 col클래스 내부에 위치 / col은 row의 직속자녀-->
                 <button class="btn btn-primary float-end" type="button"
-                        th:onclick="|location.href='@{/basic/items/add}'|">
+                        onclick="location.href='addForm.html'">
                 상품등록
                 </button>
             </div>
@@ -32,7 +32,7 @@
                 <tbody>
                     <tr th:each="item : ${items}">  <!--item을 꺼내올때 item.id, item.name가능-->
                         <td><a th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">회원id</a></td>
-                        <td><a th:href="@{basic/items/{itemId}(itemId=${item.id})}" th:text="${item.name}">상품명</a></td>
+                        <td><a th:href="@{basic/items/{itemId}(itemId=${item.name})}" th:text="${item.name}">상품명</a></td>
                         <td th:text="${item.price}">가격</td>
                        <td th:text="${item.quantity}">개수</td>      <!-- value는 input의 속성-->
                     </tr>
