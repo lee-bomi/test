@@ -32,7 +32,7 @@
                 <tbody>
                     <tr th:each="item : ${items}">  <!--item을 꺼내올때 item.id, item.name가능-->
                         <td><a th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">회원id</a></td>
-                        <td><a th:href="@{basic/items/{itemId}(itemId=${item.id})}" th:text="${item.name}">상품명</a></td>
+                        <td><a th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.name}">상품명</a></td>
                         <td th:text="${item.price}">가격</td>
                        <td th:text="${item.quantity}">개수</td>      <!-- value는 input의 속성-->
                     </tr>
