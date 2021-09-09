@@ -7,9 +7,13 @@
 </head>
 <body>                  <!-- -->
     <div class="container" style="max-width: 600px" >
+        <div class="py-5 text-center">
+            <h2>상품 목록</h2>
+        </div>
         <div class="row">   <!--(가로) .row는 container 안에 -->
             <div class="col">   <!-- 내용은 col클래스 내부에 위치 / col은 row의 직속자녀-->
-                <button class="btn btn-primary float-end" type="button">
+                <button class="btn btn-primary float-end" type="button"
+                        th:onclick="|location.href='@{/basic/items/add}'|">
                 상품등록
                 </button>
             </div>
