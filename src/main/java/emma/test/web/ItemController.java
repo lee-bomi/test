@@ -6,10 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.PostConstruct;
@@ -44,6 +41,8 @@ public class ItemController {
     @PostMapping("/add") //새로고침했을때 최근 작업이 반복지않도록, 리다이렉트
     public String addItem(Item item, RedirectAttributes redirectAttributes) {
         Item savedItem = itemRepository.save(item);
+        System.out.println("controller " + savedItem.getId());
+        System.out.println("controller " + savedItem.getName());
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
         return "redirect:/basic/items/{itemId}";
@@ -57,9 +56,17 @@ public class ItemController {
     }
 
     @GetMapping("/{itemId}/edit")
-    public String edit(@PathVariable Long itemId, Model model) {
+    public String editItem(@PathVariable Long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
-        return "basic/editform";
+        return "basic/editForm";
     }
+
+    @PostMapping("/{itemId}/edit")
+    public String edit(@PathVariable Long itemId, @ModelAttribute Item item) {
+        itemRepository.update(itemId, item);
+        return "redirect:/basic/items/{itemId}";
+
+    }
+
 }

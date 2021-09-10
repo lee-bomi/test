@@ -13,6 +13,8 @@ public class ItemRepository {
     public Item save(Item item){
         item.setId(++sequence);
         store.put(item.getId(), item);
+        System.out.println("item " + item.getId());
+        System.out.println("item " + item.getName());
         return item;
     }
 

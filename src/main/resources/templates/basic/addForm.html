@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">   <!-- 절대경로 -->
     <title>Title</title>
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,15 +19,15 @@
         <form th:action method="post">
             <div>
                 <label for="itemName">상품명</label>
-                <input type="text" id="itemName" name="itemName" class="form-control", placeholder="이름 입력">
+                <input type="text" id="itemName" name="itemName" class="form-control" placeholder="이름을 입력하세요">
             </div>
             <div>
                 <label for="price">가격</label>
-                <input type="text" id="price" name="price" class="form-control", placeholder="가격 입력">
+                <input type="text" id="price" name="price" class="form-control" placeholder="가격 입력">
             </div>
             <div>
                 <label for="quantity">수량</label>
-                <input type="text" id="quantity" name="quantity" class="form-control", placeholder="수량 입력">
+                <input type="text" id="quantity" name="quantity" class="form-control" placeholder="수량 입력">
             </div>
             <hr class="my-4">
             <div class="row">
